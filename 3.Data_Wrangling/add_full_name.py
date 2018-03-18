@@ -31,4 +31,3 @@ if __name__ == "__main__":
     path_to_csv = "github_repositories/udacity-intro-to-data-science/3.Data_Wrangling/baseballdatabank-2017.1/core/Master.csv"
     path_to_new_csv = "./New_Master.csv"
     add_full_name(path_to_csv, path_to_new_csv)
-
