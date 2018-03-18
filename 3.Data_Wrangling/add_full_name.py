@@ -18,7 +18,7 @@ def add_full_name(path_to_csv, path_to_new_csv):
     baseball_data = pandas.read_csv(path_to_csv)
     baseball_data['nameFull'] = baseball_data.nameFirst + ' ' + baseball_data.nameLast
     
-    # write the data in the pandas dataframe to a new csv file
+    # write the data in the Pandas dataframe to a new csv file
     baseball_data.to_csv(path_to_new_csv)
     
 
