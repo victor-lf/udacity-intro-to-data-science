@@ -27,7 +27,8 @@ def avg_weekend_temperature(filename):
     https://s3.amazonaws.com/content.udacity-data.com/courses/ud359/weather_underground.csv
     '''
     weather_data = pandas.read_csv(filename)
-
+    
+    #SQL query
     q = """
     SELECT AVG(meantempi)
     FROM weather_data
