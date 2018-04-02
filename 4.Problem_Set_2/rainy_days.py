@@ -26,7 +26,7 @@ def num_rainy_days(filename):
     '''
     weather_data = pandas.read_csv(filename)
     
-    # SQL query
+    #SQL query
     q = """
     SELECT COUNT(rain)
     FROM weather_data
