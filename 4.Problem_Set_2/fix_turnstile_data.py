@@ -48,4 +48,3 @@ def fix_turnstile_data(filenames):
 
     f_in.close()
     f_out.close()
-
