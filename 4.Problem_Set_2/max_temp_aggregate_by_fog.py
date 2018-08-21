@@ -10,26 +10,26 @@ def max_temp_aggregate_by_fog(filename):
     maxtempi for that fog value (i.e., the maximum max temperature
     for both foggy and non-foggy days).  The dataframe will be 
     titled 'weather_data'. You'll need to provide the SQL query.
-    
+
     You might also find that interpreting numbers as integers or floats may not
     work initially.  In order to get around this issue, it may be useful to cast
     these numbers as integers.  This can be done by writing cast(column as integer).
     So for example, if we wanted to cast the maxtempi column as an integer, we would actually
     write something like where cast(maxtempi as integer) = 76, as opposed to simply 
     where maxtempi = 76.
-    
+
     You can see the weather data that we are passing in below:
     https://s3.amazonaws.com/content.udacity-data.com/courses/ud359/weather_underground.csv
     '''
     weather_data = pandas.read_csv(filename)
 
-    #SQL query
+    # SQL query
     q = """
-    SELECT fog, max(maxtempi) 
-    FROM weather_data   
+    SELECT fog, max(maxtempi)
+    FROM weather_data
     GROUP BY fog
     """
-    
-    #Execute your SQL command against the pandas frame
+
+    # Execute your SQL command against the pandas frame
     foggy_days = pandasql.sqldf(q.lower(), locals())
     return foggy_days
